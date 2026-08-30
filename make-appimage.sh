@@ -11,6 +11,7 @@ export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}
 export ICON=/usr/share/icons/hicolor/128x128/apps/ktorrent.png
 export DESKTOP=/usr/share/applications/org.kde.ktorrent.desktop
 export STARTUPWMCLASS=org.kde.ktorrent
+export USE_HOST_DRIVERS_EXPERIMENTAL=1
 
 # Deploy dependencies
 quick-sharun /usr/bin/kt* /usr/share/ktorrent /usr/lib/qt6/plugins/ktorrent_plugins /usr/lib/libktcore.so*
