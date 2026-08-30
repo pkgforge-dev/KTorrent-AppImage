@@ -11,11 +11,13 @@ export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}
 export ICON=/usr/share/icons/hicolor/128x128/apps/ktorrent.png
 export DESKTOP=/usr/share/applications/org.kde.ktorrent.desktop
 export STARTUPWMCLASS=org.kde.ktorrent
-export DEPLOY_QT=1
-export QT_DIR=qt6
 
 # Deploy dependencies
 quick-sharun /usr/bin/kt* /usr/share/ktorrent /usr/lib/qt6/plugins/ktorrent_plugins /usr/lib/libktcore.so*
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
+
+# Test the app for 12 seconds, if the app normally quits before that time
+# then skip this or check if some flag can be passed that makes it stay open
+quick-sharun --simple-test ./dist/*.AppImage
